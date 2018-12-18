@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "dev": "node ./server/server.js & webpack --mode=development --watch",
     "lint": "vue-cli-service lint",
-    "prestart": "webpack --mode=development",
+    "prestart": "webpack --mode=production",
     "start": "node ./server/server.js"
   },
   "dependencies": {
