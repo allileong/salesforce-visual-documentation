@@ -37,6 +37,15 @@ export default {
     msg: String
   }
 }
+fetch('post/wa', {
+      credentials: 'include',
+      method: 'get',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then((res) => {
+      console.log(res);
+    });
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
