@@ -1,34 +1,31 @@
 <template>
   <div id="app">
-    <div id="sidebar">
-      <SideBarItem v-bind:store="store" itemName="CLI"/>
-      <SideBarItem v-bind:store="store" itemName="Replay Debugger"/>
-      <SideBarItem v-bind:store="store" itemName="Apex LSP"/>
+    <div id="side-bar">
+      <SideBar v-bind:store="store" v-bind:sideBarItems="sideBarItems"/>
     </div>
     <div id="content">
-      <div>{{store.name}}</div>
-      <img alt="Vue logo" src="./assets/logo.png">
-      <HelloWorld v-bind:store="store" msg="Welcome to Your Vue.js App"/>
+      <ContentSection v-bind:store="store"/>
     </div>
     
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import SideBarItem from './components/SideBarItem.vue'
+import ContentSection from './components/ContentSection.vue'
+import SideBar from './components/SideBar.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
-    SideBarItem
+    ContentSection,
+    SideBar
   },
   data: function() {
     return {
       store: {
         name: 'foo'
-      }
+      },
+      sideBarItems: ['CLI', 'Replay Debugger', 'Apex']
     }
   }
 }
