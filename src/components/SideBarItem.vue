@@ -1,6 +1,6 @@
 <template>
   <div class="side-bar-item">
-    <button v-on:click="setStoreName">{{ itemName }}</button>
+    <div v-on:click="setStoreName">{{ itemName }}</div>
   </div>
 </template>
 
