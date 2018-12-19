@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node ./server/server.js & webpack --mode=development --watch",
+    "dev": "node ./server/server.js & NODE_ENV=development webpack --mode=development --watch",
     "lint": "vue-cli-service lint",
     "prestart": "webpack --mode=production",
     "start": "node ./server/server.js"
