@@ -6,9 +6,13 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-
 const SRC_DIR = path.resolve(__dirname, 'src');
 const DIST = path.resolve(__dirname, 'public');
+
+let liveReloadOpts = {};
+if (process.env.NODE_ENV === 'development') {
+    liveReloadOpts = { appendScriptTag: true };
+}
 
 const entries = [
     {
@@ -113,6 +117,6 @@ module.exports = {
             }),
         ),
         new VueLoaderPlugin(),
-        new LiveReloadPlugin(),
+        new LiveReloadPlugin(liveReloadOpts),
     ],
 };
