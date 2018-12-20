@@ -1,14 +1,13 @@
 <template>
   <ul id="side-bar">
     <li v-for="item in sideBarItems" v-bind:key="item">
-      <SideBarItem v-bind:store="store" v-bind:itemName="item"/>
+      <SideBarItem v-bind:store="store" v-bind:itemName="item" />
     </li>
   </ul>
 </template>
 
 <script>
-
-import SideBarItem from './SideBarItem.vue'
+import SideBarItem from './SideBarItem.vue';
 export default {
   name: 'SideBar',
   components: {
@@ -18,7 +17,7 @@ export default {
     sideBarItems: Array,
     store: Object
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

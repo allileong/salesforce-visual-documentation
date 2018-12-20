@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "node ./server/server.js & NODE_ENV=development webpack --mode=development --watch",
+    "format": "prettier --config .prettierrc --write './*.js' './server/*.js' 'src/**/*.{js,vue,html}'",
     "lint": "vue-cli-service lint",
     "prestart": "webpack --mode=production",
     "start": "node ./server/server.js"
@@ -25,6 +26,7 @@
     "eslint-plugin-vue": "^5.0.0-0",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
+    "prettier": "1.15.3",
     "style-loader": "^0.21.0",
     "vue-loader": "^15.2.4",
     "vue-template-compiler": "^2.5.17",

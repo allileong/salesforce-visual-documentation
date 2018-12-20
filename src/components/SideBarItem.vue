@@ -8,7 +8,7 @@
 export default {
   name: 'SideBarItem',
   props: {
-    itemName: String, 
+    itemName: String,
     store: Object
   },
   methods: {
@@ -20,7 +20,7 @@ export default {
       this.store.name = this.itemName;
     }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
