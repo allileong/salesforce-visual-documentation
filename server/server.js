@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
+const showdown = require('showdown');
 
 const app = express();
 
@@ -18,9 +20,18 @@ const port = Number(process.env.PORT || 3000);
 app.get('/post/:id', (req, res) => {
     console.log(req.params.id);
 
+    const converter = new showdown.Converter();
+    let text;
+
+    try {
+        text = fs.readFileSync(path.join(__dirname, '../posts', 'core_test.md'), 'utf8');
+    } catch (e) {
+        text = 'There was an unexpected error.';
+        console.error(e);
+    }
+
     res.json({
-        message: 'wuuu',
-        error: 'waaaaaaa',
+        html: converter.makeHtml(text)
     });
 });
 
