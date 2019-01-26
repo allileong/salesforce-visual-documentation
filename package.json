@@ -6,7 +6,9 @@
     "dev": "node ./server/server.js & NODE_ENV=development webpack --mode=development --watch",
     "format": "prettier --config .prettierrc --write './*.js' './server/*.js' 'src/**/*.{js,vue,html}'",
     "lint": "vue-cli-service lint",
-    "prestart": "webpack --mode=production",
+    "local:prestart": "webpack --mode=production",
+    "heroku-prebuild": "yarn install --production=false",
+    "heroku-postbuild": "webpack --mode=production --progress",
     "start": "node ./server/server.js"
   },
   "dependencies": {
